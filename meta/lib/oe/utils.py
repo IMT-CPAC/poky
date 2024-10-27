@@ -285,7 +285,9 @@ def host_gcc_version(d):
     except subprocess.CalledProcessError as e:
         bb.fatal("Error running %s --version: %s" % (compiler, e.output.decode("utf-8")))
 
-    match = re.match(".* (\d\.\d)\.\d.*", output.split('\n')[0])
+    # match = re.match(".* (\d\.\d)\.\d.*", output.split('\n')[0])
+    match = re.match(r".* (\d+\.\d+)\.\d+.*", output.split('\n')[0])
+
     if not match:
         bb.fatal("Can't get compiler version from %s --version output" % compiler)
 
