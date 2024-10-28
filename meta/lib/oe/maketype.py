@@ -96,7 +96,7 @@ for name in dir(types):
         continue
 
     obj = getattr(types, name)
-    if not isinstance(obj, collections.Callable):
+    if not isinstance(obj, collections.abc.Callable):
         continue
 
     register(name, obj)
