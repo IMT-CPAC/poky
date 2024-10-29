@@ -10,7 +10,7 @@ SECTION = "base/shell"
 
 inherit useradd pkgconfig autotools perlnative update-rc.d update-alternatives qemu systemd ptest gettext bash-completion manpages
 
-SRC_URI = "git://github.com/systemd/systemd.git;protocol=git \
+SRC_URI = "git://github.com/systemd/systemd.git;protocol=git;branch=main \
            file://touchscreen.rules \
            file://00-create-volatile.conf \
            file://init \
